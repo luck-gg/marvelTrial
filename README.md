@@ -1,4 +1,4 @@
-# Cryptoluck
+# MarvelApp
 ## Una aplicación para ver todos los personajes de Marvel
 ### Descripción
 En esta aplicacion, existe una lista al iniciarla, que contiene una lista numerada de todos los personajes existentes.

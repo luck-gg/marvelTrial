@@ -7,11 +7,12 @@ import java.sql.Timestamp
 
 class Constants {
     companion object {
+        const val PARAM_CHAR_ID = "characterId"
         const val BASE_URL = "https://gateway.marvel.com/"
         val timestamp = Timestamp(System.currentTimeMillis()).time.toString()
         const val API_KEY = BuildConfig.API_KEY
         const val PRIVATE_KEY = BuildConfig.PRIVATE_KEY
-        const val LIMIT = 20
+        const val LIMIT = 100
         fun hash(): String {
             val input = "$timestamp$PRIVATE_KEY$API_KEY"
             val md = MessageDigest.getInstance("MD5")

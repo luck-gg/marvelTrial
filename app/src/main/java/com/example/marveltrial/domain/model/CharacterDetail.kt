@@ -8,5 +8,5 @@ data class CharacterDetail(
     val name: String,
     val series: Int,
     val stories: Int,
-    val thumbnail: String,
+    val thumbnail: String
 )

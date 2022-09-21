@@ -13,4 +13,3 @@ data class Result(
     val thumbnail: Thumbnail,
     val urls: List<Url>
 )
-

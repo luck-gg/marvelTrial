@@ -11,8 +11,8 @@ class GetCharacterListUseCase @Inject constructor(
     private val repository: MarvelRepository
 ) {
 
-    operator fun invoke(): Flow<Resource<List<Character>>> = flow {
-        val response = repository.getCharacters()
+    operator fun invoke(offset: Int): Flow<Resource<List<Character>>> = flow {
+        val response = repository.getCharacters(offset)
         emit(response)
     }
 }

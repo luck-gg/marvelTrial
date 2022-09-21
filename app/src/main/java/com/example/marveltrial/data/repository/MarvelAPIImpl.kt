@@ -1,13 +1,11 @@
 package com.example.marveltrial.data.repository
 
-
-import com.example.marveltrial.common.Constants
 import com.example.marveltrial.common.Resource
 import com.example.marveltrial.data.remote.MarvelAPI
 import com.example.marveltrial.data.remote.dto.toCharacterDetail
 import com.example.marveltrial.data.remote.dto.toCharacterList
-import com.example.marveltrial.domain.model.CharacterDetail
 import com.example.marveltrial.domain.model.Character
+import com.example.marveltrial.domain.model.CharacterDetail
 import com.example.marveltrial.domain.repository.MarvelRepository
 import retrofit2.HttpException
 import java.io.IOException
@@ -17,9 +15,9 @@ class MarvelAPIImpl @Inject constructor(
     private val api: MarvelAPI
 ) : MarvelRepository {
 
-    override suspend fun getCharacters(): Resource<List<Character>> {
+    override suspend fun getCharacters(offset: Int): Resource<List<Character>> {
         return try {
-            val chars = api.getCharacters()
+            val chars = api.getCharacters(offset = offset)
             val charList = chars.toCharacterList()
             Resource.Success(charList)
         } catch (e: HttpException) {

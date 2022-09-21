@@ -13,7 +13,8 @@ interface MarvelAPI {
         @Query("apikey") apikey: String = Constants.API_KEY,
         @Query("ts") ts: String = Constants.timestamp,
         @Query("hash") hash: String = Constants.hash(),
-        @Query("limit") limit: Int = Constants.LIMIT
+        @Query("limit") limit: Int = Constants.LIMIT,
+        @Query("offset") offset: Int
     ): CharacterListDto
 
     @GET("/v1/public/characters/{characterId}")

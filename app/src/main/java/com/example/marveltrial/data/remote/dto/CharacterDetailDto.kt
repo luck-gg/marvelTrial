@@ -13,6 +13,7 @@ data class CharacterDetailDto(
     val etag: String,
     val status: String
 )
+
 fun CharacterDetailDto.toCharacterDetail(): CharacterDetail {
     val result: Result = characterData.results.first()
     return CharacterDetail(
@@ -23,6 +24,11 @@ fun CharacterDetailDto.toCharacterDetail(): CharacterDetail {
         events = result.events.available,
         series = result.series.available,
         stories = result.stories.available,
-        thumbnail = "${result.thumbnail.path}.${result.thumbnail.extension}"
+        thumbnail = "${
+        result.thumbnail.path.replace(
+            "http:",
+            "https:"
+        )
+        }.${result.thumbnail.extension}"
     )
 }
